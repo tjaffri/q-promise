@@ -6,7 +6,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/axis-tip/quran-promise.svg?style=flat-square)](https://coveralls.io/axis-tip/quran-promise)
 [![Dependency Status](http://img.shields.io/david/axis-tip/quran-promise.svg?style=flat-square)](https://david-dm.org/axis-tip/quran-promise)
 
-> ES6 promise enabled node module for the Holy Quran.
+> ES6 promise enabled node module for the Holy Quran. Uses the Tanzil 
 
 ### How to Install
 
@@ -35,6 +35,17 @@ To launch the documentation site, run:
 $ npm install -g easystatic
 $ npm start
 ```
+
+## Credits
+
+With thanks, this module acknowledges and depends on the following resources:
+
+1. Tanzil project: http://tanzil.net/
+2. EveryAyah: http://everyayah.com/data/status.php
+
+Also, there is a similar npm module https://www.npmjs.com/package/quran which is great, but does not currently support
+ES6 promises. The purposes of this module is to add this capability, and since this will be a significant breaking changes
+it is being done as a new module.
 
 ### License
 
