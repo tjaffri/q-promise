@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "ES6 promise enabled node module for the Holy Quran.",
   "repository": "axis-tip/quran-promise",
+  "homepage": "https://axis-tip.github.io/quran-promise/",
   "author": "Axis, the Information Professionals.",
   "license": "MIT",
   "keywords": [

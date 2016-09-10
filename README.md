@@ -10,12 +10,6 @@
 
 ## Quick Start
 
-Here's how you get started with using this library.
-
-```bash
-$ npm install quran-promise --save
-```
-
 For more detailed documentation, and code samples for how to use this module, please visit: https://axis-tip.github.io/quran-promise/.
 
 ## Developing
