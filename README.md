@@ -6,17 +6,28 @@
 [![Coverage Status](https://img.shields.io/coveralls/axis-tip/quran-promise.svg?style=flat-square)](https://coveralls.io/axis-tip/quran-promise)
 [![Dependency Status](http://img.shields.io/david/axis-tip/quran-promise.svg?style=flat-square)](https://david-dm.org/axis-tip/quran-promise)
 
-> ES6 promise enabled node module for the Holy Quran. Uses the Tanzil 
+> ES6 promise enabled node module for the Holy Quran. Uses the Tanzil corpus: http://tanzil.net.
 
-### How to Install
+## Quick Start
 
-```sh
-$ npm install quran-promise
+Here's how you get started with using this library.
+
+```bash
+$ npm install quran-promise --save
 ```
 
-### Getting Started
+For more detailed documentation, and code samples for how to use this module, please visit: https://axis-tip.github.io/quran-promise/.
 
-...
+## Developing
+
+The rest of this `README` describes how you can clone this repo to get the source to develop/test locally. Contributions are
+very welcome!
+
+### Environment Setup
+
+```bash
+$ git clone https://github.com/axis-tip/quran-promise
+```
 
 ### How to Test
 
@@ -42,6 +53,7 @@ With thanks, this module acknowledges and depends on the following resources:
 
 1. Tanzil project: http://tanzil.net/
 2. EveryAyah: http://everyayah.com/data/status.php
+3. The Babel Starter Kit, used to scaffold the initial version of this module: https://github.com/kriasoft/babel-starter-kit/
 
 Also, there is a similar npm module https://www.npmjs.com/package/quran which is great, but does not currently support
 ES6 promises. The purposes of this module is to add this capability, and since this will be a significant breaking changes
