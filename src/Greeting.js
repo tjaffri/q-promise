@@ -16,7 +16,6 @@ class Greeting {
   hello() {
     return `Welcome, ${this.name}!`;
   }
-
 }
 
 export default Greeting;

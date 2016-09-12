@@ -8,11 +8,11 @@
 
 > ES6 promise enabled node module for the Holy Quran. Uses the Tanzil corpus: http://tanzil.net.
 
-## Quick Start
+## Using this Module
 
-For more detailed documentation, and code samples for how to use this module, please visit: https://axis-tip.github.io/quran-promise/.
+For detailed documentation, and code samplesm for how to use this module in your app or service please visit: https://axis-tip.github.io/quran-promise/.
 
-## Developing
+## Developing this Module
 
 The rest of this `README` describes how you can clone this repo to get the source to develop/test locally. Contributions are
 very welcome!
@@ -21,6 +21,8 @@ very welcome!
 
 ```bash
 $ git clone https://github.com/axis-tip/quran-promise
+$ cd quran-promise
+$ npm install
 ```
 
 ### How to Test
