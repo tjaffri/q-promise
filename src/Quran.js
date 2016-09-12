@@ -7,15 +7,11 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-class Greeting {
+class Quran {
 
-  constructor(name) {
-    this.name = name || 'Guest';
-  }
-
-  hello() {
-    return `Welcome, ${this.name}!`;
+  async get() {
+    return 'ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
   }
 }
 
-export default Greeting;
+export default Quran;
