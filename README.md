@@ -19,7 +19,7 @@ very welcome!
 
 ### Environment Setup
 
-```bash
+```sh
 $ git clone https://github.com/axis-tip/quran-promise
 $ cd quran-promise
 $ npm install
