@@ -9,9 +9,9 @@
 
 'use strict';
 
-const request = require('request-promise');
-const fs = require('fs-promise');
-const del = require('del');
+import request from 'request-promise';
+import fs from 'fs-promise';
+import del from 'del';
 
 // defines the output directory
 const corpusDir = `${__dirname}/../corpus`;
@@ -72,7 +72,7 @@ async function downloadTranslation(language) {
   await getFile(`http://tanzil.net/trans/${language}`, `${corpusDir}/${language}.txt`);
 }
 
-// execute helper methods
+// execute as an IIFE: Immediately-Invoked Function Expression (IIFE)
 (async function main() {
   try {
     // delete contents of output directory

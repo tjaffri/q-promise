@@ -1,7 +1,7 @@
 /**
- * quran-promise
+ * Babel Starter Kit (https://www.kriasoft.com/babel-starter-kit)
  *
- * Copyright © 2016 Axis, the Information Professionals. All rights reserved.
+ * Copyright © 2015-2016 Kriasoft, LLC. All rights reserved.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
@@ -9,45 +9,60 @@
 
 'use strict';
 
-const fs = require('fs');
-const del = require('del');
-const rollup = require('rollup');
-const babel = require('rollup-plugin-babel');
-const pkg = require('../package.json');
+import fs from 'fs-promise';
+import del from 'del';
+import rollup from 'rollup';
+import babel from 'rollup-plugin-babel';
+import pkg from '../package.json';
 
-let promise = Promise.resolve();
+// Transpile source code into a distributable format with Babel.
+async function transpile() {
+  for (const format of ['es6', 'cjs', 'umd']) {
+    // bundle the source.
+    const bundle = await rollup.rollup({
+      entry: 'src/index.js',
+      external: Object.keys(pkg.dependencies),
+      plugins: [babel(Object.assign(pkg.babel, {
+        babelrc: false,
+        exclude: 'node_modules/**',
+        runtimeHelpers: true,
+        presets: pkg.babel.presets.map(x => (x === 'es2015' ? 'es2015-rollup' : x)),
+      }))],
+    });
 
-// Clean up the output directory
-promise = promise.then(() => del(['dist/*']));
-
-// Compile source code into a distributable format with Babel
-for (const format of ['es6', 'cjs', 'umd']) {
-  promise = promise.then(() => rollup.rollup({
-    entry: 'src/index.js',
-    external: Object.keys(pkg.dependencies),
-    plugins: [babel(Object.assign(pkg.babel, {
-      babelrc: false,
-      exclude: 'node_modules/**',
-      runtimeHelpers: true,
-      presets: pkg.babel.presets.map(x => (x === 'es2015' ? 'es2015-rollup' : x)),
-    }))],
-  }).then(bundle => bundle.write({
-    dest: `dist/${format === 'cjs' ? 'index' : `index.${format}`}.js`,
-    format,
-    sourceMap: true,
-    moduleName: format === 'umd' ? pkg.name : undefined,
-  })));
+    // write the bundle, generating source maps.
+    await bundle.write({
+      dest: `dist/${format === 'cjs' ? 'index' : `index.${format}`}.js`,
+      format,
+      sourceMap: true,
+      moduleName: format === 'umd' ? pkg.name : undefined,
+    });
+  }
 }
 
-// Copy package.json and LICENSE.txt
-promise = promise.then(() => {
+// Copy package.json and LICENSE.txt.
+async function copyPackageFiles() {
   delete pkg.private;
   delete pkg.devDependencies;
   delete pkg.scripts;
   delete pkg.eslintConfig;
   delete pkg.babel;
-  fs.writeFileSync('dist/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
-  fs.writeFileSync('dist/LICENSE.txt', fs.readFileSync('LICENSE.txt', 'utf-8'), 'utf-8');
-});
+  await fs.writeFile('dist/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
+  await fs.writeFile('dist/LICENSE.txt', await fs.readFile('LICENSE.txt', 'utf-8'), 'utf-8');
+}
 
-promise.catch(err => console.error(err.stack)); // eslint-disable-line no-console
+// execute as an IIFE: Immediately-Invoked Function Expression (IIFE)
+(async function main() {
+  try {
+    // Clean up the output directory
+    del(['dist/*']);
+
+    // transpile with babel
+    await transpile();
+
+    // copy package files
+    await copyPackageFiles();
+  } catch (error) {
+    console.error(`Error: ${error}`); // eslint-disable-line no-console
+  }
+}());

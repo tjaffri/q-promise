@@ -21,9 +21,9 @@ very welcome!
 
 First, set up your dev tools and node.js:
 
-1. Use your favourite IDE, e.g. VSCode: https://code.visualstudio.com/. More information about this IDE:
-  1. There is some useful information about JavaScript development in VSCode [here](https://code.visualstudio.com/docs/languages/javascript) including how to debug. 
-  2. Install eslint globally via `npm install -g eslint` and then install the VSCode `eslint` extension. See [here](http://stackoverflow.com/questions/36327096/vscode-linter-es6-es7-babel-linter) for more info.
+1. Set up your favourite IDE. We use VSCode: https://code.visualstudio.com/ and you can configure this IDE as follows:
+  1. Follow this useful article about JavaScript development in VSCode [here](https://code.visualstudio.com/docs/languages/javascript), including how to debug.
+  2. Set up linting in VSCode. You can install eslint globally via `npm install -g eslint` and then install the VSCode `eslint` extension. See [here](http://stackoverflow.com/questions/36327096/vscode-linter-es6-es7-babel-linter) for more info.
 2. Install Node.js (version 6.x or higher)
 
 Next, clone the repo and install dependencies.
@@ -34,7 +34,12 @@ $ cd quran-promise
 $ npm install
 ```
 
-### How to Test
+Finally, if you're new to Next Generation JavaScript you might want to brush up on the following resources:
+
+1. ES6 Training Course](https://es6.io/friend/konstantin) by Wes Bos
+2. [You Don't Know JS: ES6 & Beyond](http://amzn.to/2bzvV51) by Kyle Simpson (Dec, 2015)
+
+### Code Health
 
 Run one, or a combination of the following commands to lint and test your code:
 
