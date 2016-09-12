@@ -19,6 +19,15 @@ very welcome!
 
 ### Environment Setup
 
+First, set up your dev tools and node.js:
+
+1. Use your favourite IDE, e.g. VSCode: https://code.visualstudio.com/. More information about this IDE:
+   1. There is some useful information about JavaScript development in VSCode [here](https://code.visualstudio.com/docs/languages/javascript) including how to debug. 
+   2. Install eslint globally via `npm install -g eslint` and then install the VSCode `eslint` extension.
+2. Install Node.js (version 6.x or higher)
+
+Next, clone the repo and install dependencies.
+
 ```sh
 $ git clone https://github.com/axis-tip/quran-promise
 $ cd quran-promise
