@@ -2,7 +2,6 @@
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 
 coverage
-corpus
 dist
 docs/dist
 node_modules
