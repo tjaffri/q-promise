@@ -14,7 +14,7 @@ const fs = require('fs-promise');
 const del = require('del');
 
 // defines the output directory
-const corpusDir = __dirname + '/../corpus';
+const corpusDir = `${__dirname}/../corpus`;
 
 // defines data to download from tanzil
 const translations = ['en.shakir', 'ur.jawadi', 'hi.hindi'];
@@ -22,10 +22,10 @@ const quranType = 'uthmani';
 
 // helper method to download a file via GET to a url, overwriting on any conflicts
 async function getFile(url, filePath) {
-  console.log(url + ' >> ' + filePath);
+  console.log(`${url} >> ${filePath}`);
 
   // download
-  var contents = await request.get(url);
+  const contents = await request.get(url);
 
   // write file
   await fs.writeFile(filePath, contents);
@@ -36,56 +36,56 @@ async function downloadArabic() {
   console.log('downloading Arabic corpus...');
 
   // download the arabic metadata from tanzil
-  await getFile('http://tanzil.net/res/text/metadata/quran-data.js', corpusDir + '/quran-data.js');
+
+  await getFile('http://tanzil.net/res/text/metadata/quran-data.js', `${corpusDir}/quran-data.js`);
 
   // append the module export to the downloaded metadata file
-  await fs.appendFile(corpusDir + '/quran-data.js', 'module.exports = QuranData;');
+  await fs.appendFile(`${corpusDir}/quran-data.js`, 'module.exports = QuranData;');
 
   // download the arabic corpus from tanzil
-  var url = 'http://tanzil.net/pub/download/download.php';
-  var filePath = corpusDir + '/quran-' + quranType + '.txt';
+  const url = 'http://tanzil.net/pub/download/download.php';
+  const filePath = `${corpusDir}/quran-${quranType}.txt`;
 
-  var options = {
+  const options = {
     method: 'POST',
     uri: url,
     form: {
-      quranType: quranType,
+      quranType,
       marks: true,
       sajdah: true,
       alef: true,
       outType: 'txt-2',
-      agree: true
-    }
+      agree: true,
+    },
   };
 
-  var contents = await request.post(options);
-  console.log(url + ' >> ' + filePath);
+  const contents = await request.post(options);
+  console.log(`${url} >> ${filePath}`);
   await fs.writeFile(filePath, contents);
 }
 
 // helper method to download the translation corpus for a language
 async function downloadTranslation(language) {
-  console.log('downloading Translation corpus for: ' + language);
+  console.log(`downloading Translation corpus for: ${language}`);
 
   // download the translation from tanzil
-  await getFile('http://tanzil.net/trans/' + language, corpusDir + '/' + language + '.txt');
+  await getFile(`http://tanzil.net/trans/${language}`, `${corpusDir}/${language}.txt`);
 }
 
 // execute helper methods
 (async function main() {
   try {
     // delete contents of output directory
-    del([corpusDir + '/*'])
+    del([`${corpusDir}/*`]);
 
     // Download Arabic Corpus from tanzil
     await downloadArabic();
 
     // Download Translations from tanzil
-    for (var translation of translations) {
+    for (const translation of translations) {
       await downloadTranslation(translation);
     }
+  } catch (error) {
+    console.error(`Error: ${error}`);
   }
-  catch (error) {
-    console.log('Error: ' + error);
-  }
-})();
+}());

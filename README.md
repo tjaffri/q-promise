@@ -30,10 +30,11 @@ $ npm install
 Run one, or a combination of the following commands to lint and test your code:
 
 ```sh
-$ npm run lint          # Lint the source code with ESLint
+$ npm run lint          # Lint the source code with ESLint (runs as part of CI build)
+$ npm run lint:fix      # Lint the source code with ESLint, using the --fix option to auto-fix some issues
 $ npm test              # Run unit tests with Mocha
 $ npm run test:watch    # Run unit tests with Mocha, and watch files for changes
-$ npm run test:cover    # Run unit tests with code coverage by Istanbul
+$ npm run test:cover    # Run unit tests with code coverage by Istanbul (runs as part of CI build)
 ```
 
 To launch the documentation site, run:

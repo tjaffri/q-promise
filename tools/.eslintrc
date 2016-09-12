@@ -1,5 +1,16 @@
 {
+  "installedESLint": true,
   "rules": {
-    "strict": 0
+    "strict": 0,
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-extra-boolean-cast": "off",
+    "no-console": "off"
+  },
+  "env": {
+    "es6": true,
+    "node": true
   }
 }
