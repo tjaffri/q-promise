@@ -34,6 +34,12 @@ $ cd quran-promise
 $ npm install
 ```
 
+The quran data is in a sqllite database. If you want to re-generate it, please run:
+
+```sh
+npm run gendb
+```
+
 Finally, if you're new to Next Generation JavaScript you might want to brush up on the following resources:
 
 1. ES6 Training Course](https://es6.io/friend/konstantin) by Wes Bos

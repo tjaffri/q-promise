@@ -55,7 +55,8 @@
     "mocha": "^2.4.5",
     "rollup": "^0.26.2",
     "rollup-plugin-babel": "^2.4.0",
-    "sinon": "^2.0.0-pre"
+    "sinon": "^2.0.0-pre",
+    "sqlite": "^2.2.0"
   },
   "scripts": {
     "lint": "eslint src test tools",
@@ -66,7 +67,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "build": "babel-node tools/build",
     "prepublish": "npm run build",
-    "postinstall": "babel-node tools/downloadCorpus.js",
+    "gendb": "babel-node tools/downloadAndImportCorpus.js",
     "publish:docs": "easystatic deploy docs --repo axis-tip/quran-promise",
     "start": "easystatic start docs"
   }
