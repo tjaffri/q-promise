@@ -72,9 +72,9 @@ With thanks, this module acknowledges and depends on the following resources:
 2. EveryAyah: http://everyayah.com/data/status.php
 3. The Babel Starter Kit, used to scaffold the initial version of this module: https://github.com/kriasoft/babel-starter-kit/
 
-Also, there is a similar npm module https://www.npmjs.com/package/quran which is great, but does not currently support
-ES6 promises. The purposes of this module is to add this capability, and since this will be a significant breaking changes
-it is being done as a new module.
+Finally, a HUGE callout to the  similar npm module https://www.npmjs.com/package/quran. We ended up completely rewriting it,
+to support ES6 promises, but got a lot of inspiration from it. We also tried to keep the calling semantics as similar as possible
+to aid anyone who might be migrating from that module.
 
 ### License
 
