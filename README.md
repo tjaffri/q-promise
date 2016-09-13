@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/quran-promise.svg?style=flat-square)](https://www.npmjs.com/package/quran-promise)
 [![NPM downloads](http://img.shields.io/npm/dm/quran-promise.svg?style=flat-square)](https://www.npmjs.com/package/quran-promise)
 [![Build Status](http://img.shields.io/travis/axis-tip/quran-promise/master.svg?style=flat-square)](https://travis-ci.org/axis-tip/quran-promise)
-[![Coverage Status](https://img.shields.io/coveralls/axis-tip/quran-promise.svg?style=flat-square)](https://coveralls.io/axis-tip/quran-promise)
+[![Coverage Status](https://img.shields.io/coveralls/axis-tip/quran-promise.svg?style=flat-square)](https://coveralls.io/github/axis-tip/quran-promise)
 [![Dependency Status](http://img.shields.io/david/axis-tip/quran-promise.svg?style=flat-square)](https://david-dm.org/axis-tip/quran-promise)
 
 > ES6 promise enabled node module for the Holy Quran. Uses the Tanzil corpus: http://tanzil.net.
@@ -14,8 +14,7 @@ For detailed documentation, and code samplesm for how to use this module in your
 
 ## Developing this Module
 
-The rest of this `README` describes how you can clone this repo to get the source to develop/test locally. Contributions are
-very welcome!
+The rest of this `README` describes how you can clone this repo to get the source to develop/test locally. Contributions are very welcome!
 
 ### Environment Setup
 
@@ -25,6 +24,7 @@ First, set up your dev tools and node.js:
   1. Follow this useful article about JavaScript development in VSCode [here](https://code.visualstudio.com/docs/languages/javascript), including how to debug.
   2. Set up linting in VSCode. You can install eslint globally via `npm install -g eslint` and then install the VSCode `eslint` extension. See [here](http://stackoverflow.com/questions/36327096/vscode-linter-es6-es7-babel-linter) for more info.
 2. Install Node.js (version 6.x or higher)
+3. Install Git: https://git-scm.com/download
 
 Next, clone the repo and install dependencies.
 
@@ -34,7 +34,7 @@ $ cd quran-promise
 $ npm install
 ```
 
-The quran data is in a sqllite database. If you want to re-generate it, please run:
+The quran data is in a sqllite database, and a known good version is checked in. Optionally, ff you want to re-generate it, please run:
 
 ```sh
 npm run gendb
