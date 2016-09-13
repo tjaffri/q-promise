@@ -10,7 +10,7 @@
 
 ## Using this Module
 
-For detailed documentation, and code samplesm for how to use this module in your app or service please visit: https://axis-tip.github.io/quran-promise/.
+For detailed documentation, and code samples for how to use this module in your app or service please visit: https://axis-tip.github.io/quran-promise/.
 
 ## Developing this Module
 

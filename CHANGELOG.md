@@ -2,13 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-### [Unreleased][unreleased]
+### [v0.0.2] - 2016-09-13
 
-- ...
+- Added basic query and search capabilities
+- Automated tests at 100% coverage
 
-### [v1.0.0] - 2016-01-01
+### [v0.0.1] - 2016-09-09
 
-- ...
-
-[unreleased]: https://github.com/axis-tip/quran-promise/compare/v1.0.0...HEAD
-[v0.0.1]: https://github.com/axis-tip/quran-promise/compare/v0.0.0...v1.0.0
+- Initial scaffolding and repo structure (not a ton of functionality)
