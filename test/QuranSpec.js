@@ -115,4 +115,61 @@ describe('Quran', () => {
       expect(verses[5].ar.startsWith('يَوْمَ يَبْعَثُهُمُ ٱللَّهُ'));
     });
   });
+
+  describe('Quran.select(...)', () => {
+
+    it('should return a full numbered ayat in arabic', async () => {
+      // Fetch Al Fatiha via select
+      const quran = new Quran();
+      const verses = await quran.select({ chapter: 1 });
+
+      // TEST: Surah Fatiha has 7 ayahs
+      expect(verses.length === 7);
+
+      // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
+      expect(verses[2].ar).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
+    });
+
+    it('should return a full numbered ayat in a translation', async () => {
+      // Fetch Al Fatiha via select with a translation
+      const quran = new Quran();
+      const verses = await quran.select({ chapter: 1 }, {}, ['ur']);
+
+      // TEST: Surah Fatiha has 7 ayahs
+      expect(verses.length === 7);
+
+      // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
+      expect(verses[2].ar).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
+
+      // TEST: Urdu text of the 3rd ayah of Surah Fatiha matches
+      expect(verses[2].ur).to.be.equal('وہ عظیم اوردائمی رحمتوں والا ہے');
+    });
+
+    it('should return top ayats in arabic', async () => {
+      // Fetch Al Fatiha via select with top options
+      const quran = new Quran();
+      const verses = await quran.select({ chapter: 1 }, { limit: 3 });
+
+      // TEST: Surah Fatiha has 7 ayahs, of which we are fetching 3
+      expect(verses.length === 3);
+
+      // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
+      expect(verses[2].ar).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
+    });
+
+    it('should return some select ayats in multiple languages', async () => {
+      // Fetch Al Fatiha via select with top options
+      const quran = new Quran();
+      const verses = await quran.select({ chapter: 1, verse: [2, 4, 6] }, {}, ['en', 'ur']);
+
+      // TEST: Surah Fatiha has 7 ayahs, of which we are fetching 3
+      expect(verses.length === 3);
+
+      // TEST: Urdu text of the 4th ayah of Surah Fatiha matches
+      expect(verses[1].ur).to.be.equal('روزِقیامت کا مالک و مختار ہے');
+
+      // TEST: English text of the 4th ayah of Surah Fatiha matches
+      expect(verses[1].en).to.be.equal('Master of the Day of Judgment.');
+    });
+  });
 });

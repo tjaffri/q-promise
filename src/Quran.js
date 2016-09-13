@@ -90,9 +90,9 @@ class Quran {
 
     // join translations from other tables, if any are requested
     // beyond arabic
-    if (translations.length !== 1 && translations[0] === 'ar') {
+    if (!(translations.length === 1 && translations[0] === 'ar')) {
       translations.forEach(l => {
-        query += `JOIN ${l} USING(chapter, verse)`;
+        query += `JOIN ${l} USING(chapter, verse) `;
       });
     }
 
@@ -103,7 +103,7 @@ class Quran {
 
         if (!!f) {
           if (util.isArray(f)) {
-            params.push(`a.${k} IN (${f.join(',')}')`);
+            params.push(`a.${k} IN (${f.join(',')})`);
           } else {
             params.push(`a.${k}=${f}`);
           }
