@@ -40,7 +40,7 @@ async function transpile() {
   }
 }
 
-// Copy database, package.json and LICENSE.txt.
+// Copy package files: database, package.json, README and LICENSE.txt.
 async function copyPackageFiles() {
   delete pkg.private;
   delete pkg.devDependencies;
@@ -49,7 +49,8 @@ async function copyPackageFiles() {
   delete pkg.babel;
   await fs.writeFile('dist/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
   await fs.writeFile('dist/LICENSE.txt', await fs.readFile('LICENSE.txt', 'utf-8'), 'utf-8');
-  await fs.createReadStream('./db.sqlite').pipe(fs.createWriteStream('dist/db.sqlite'));
+  await fs.writeFile('dist/README.md', await fs.readFile('README.md', 'utf-8'), 'utf-8');
+  await fs.createReadStream('./db.sqlite').pipe(await fs.createWriteStream('dist/db.sqlite'));
 }
 
 // execute as an IIFE: Immediately-Invoked Function Expression (IIFE)
@@ -66,4 +67,4 @@ async function copyPackageFiles() {
   } catch (error) {
     console.error(`Error: ${error}`); // eslint-disable-line no-console
   }
-}());
+} ());

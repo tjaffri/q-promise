@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-### [v0.0.2] - 2016-09-13
+### [v0.0.3] - 2016-09-13
 
 - Added basic query and search capabilities
 - Automated tests at 100% coverage
