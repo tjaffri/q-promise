@@ -16,7 +16,7 @@ describe('Quran', () => {
 
     it('should return a numbered verse of a numbered ayat', async () => {
       const quran = new Quran();
-      const ayat = await quran.get();
+      const ayat = await quran.get(1, 3);
       expect(ayat).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
     });
   });

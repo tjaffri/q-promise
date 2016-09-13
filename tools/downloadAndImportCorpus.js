@@ -9,6 +9,7 @@
 
 'use strict';
 
+import appRootDir from 'app-root-dir';
 import db from 'sqlite';
 import del from 'del';
 import fs from 'fs-promise';
@@ -20,9 +21,10 @@ const translations = ['en.shakir', 'ur.jawadi', 'hi.hindi'];
 const quranType = 'uthmani';
 
 // defines the file paths
-const corpusDir = `${__dirname}/../corpus`;
+const rootDir = appRootDir.get();
+const corpusDir = `${rootDir}/corpus`;
 const arabicCorpusFilePath = `${corpusDir}/quran-${quranType}.txt`;
-const databaseFilePath = `${__dirname}/../db.sqlite`;
+const databaseFilePath = `${rootDir}/db.sqlite`;
 
 // helper method to download a file via GET to a url, overwriting on any conflicts
 async function getFile(url, filePath) {

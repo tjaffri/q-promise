@@ -7,10 +7,19 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-class Quran {
+import appRootDir from 'app-root-dir';
+import db from 'sqlite';
 
-  async get() {
-    return 'ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
+// Defines file paths
+const rootDir = appRootDir.get();
+const databaseFilePath = `${rootDir}/db.sqlite`;
+
+class Quran {
+  // gets a verse in a chapter
+  async get(chapter, verse) {
+    const query = `SELECT ar FROM ar WHERE chapter = ${chapter} AND verse = ${verse}`;
+    await db.open(databaseFilePath);
+    return (await db.get(query)).ar;
   }
 }
 
