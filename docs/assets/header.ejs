@@ -1,12 +1,11 @@
 <div class="header">
   <div class="container">
     <a class="header__logo" href="<%= base %>/">
-      <img class="header__logo-img" src="<%= base %>/img/babel.svg" alt="Babel" />Quran-promise
+      Quran-promise
     </a>
     <% if (path === '/') { %>
     <div class="header__hero">
       <img class="header__hero-img" src="<%= base %>/img/hero.svg" alt="quran-promise" />
-      <h1 class="header__hero-title">quran-promise</h1>
       <p class="header__hero-desc">An ES6 promise enabled <br/>node module for the Holy Quran.</p>
       <%- include('stats'); %>
       <a class="header__hero-btn" href="<%= base %>/getting-started">Get Started</a>
@@ -21,7 +20,10 @@
 <% if (path === '/') { %>
 <div class="header__version">
   <div class="container">
-    <span>See <a href="https://github.com/axis-tip/quran-promise/blob/master/CHANGELOG.md">changelog</a>.</span>
+    <span>
+      <a href="https://github.com/axis-tip/quran-promise/blob/master/CHANGELOG.md">changelog</a> | 
+      <a href="https://www.npmjs.com/package/quran-promise">npm page</a>
+    </span>
   </div>
 </div>
 <% } %>
