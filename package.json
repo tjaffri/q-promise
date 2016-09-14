@@ -8,6 +8,8 @@
   "license": "MIT",
   "keywords": [
     "Quran",
+    "Islam",
+    "Muslim",
     "ES6",
     "Promises",
     "JavaScript",
@@ -32,7 +34,8 @@
     "app-root-dir": "^1.0.2",
     "babel-runtime": "^6.6.1",
     "fs-promise": "^0.5.0",
-    "request-promise": "^4.1.1"
+    "request-promise": "^4.1.1",
+    "sqlite": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
@@ -57,8 +60,7 @@
     "mocha": "^2.4.5",
     "rollup": "^0.26.2",
     "rollup-plugin-babel": "^2.4.0",
-    "sinon": "^2.0.0-pre",
-    "sqlite": "^2.2.0"
+    "sinon": "^2.0.0-pre"
   },
   "scripts": {
     "lint": "eslint src test tools",
@@ -72,5 +74,8 @@
     "gendb": "babel-node tools/downloadAndImportCorpus.js",
     "publish:docs": "easystatic deploy docs --repo axis-tip/quran-promise",
     "start": "easystatic start docs"
+  },
+  "bugs": {
+    "url": "https://github.com/axis-tip/quran-promise/issues"
   }
 }
