@@ -45,7 +45,7 @@ Finally, if you're new to Next Generation JavaScript you might want to brush up 
 1. ES6 Training Course](https://es6.io/friend/konstantin) by Wes Bos
 2. [You Don't Know JS: ES6 & Beyond](http://amzn.to/2bzvV51) by Kyle Simpson (Dec, 2015)
 
-### Code Health
+### Testing, Running and Publishing
 
 Run one, or a combination of the following commands to lint and test your code:
 
@@ -55,13 +55,28 @@ $ npm run lint:fix      # Lint the source code with ESLint, using the --fix opti
 $ npm test              # Run unit tests with Mocha
 $ npm run test:watch    # Run unit tests with Mocha, and watch files for changes
 $ npm run test:cover    # Run unit tests with code coverage by Istanbul (runs as part of CI build)
+$ npm run coveralls     # Report code coverage to coveralls.io (runs as part of CI build)
 ```
 
 To launch the documentation site, run:
 
 ```sh
 $ npm install -g easystatic
-$ npm start
+$ npm start:docs
+```
+
+To publish the documentation site, run:
+
+```sh
+$ npm run publish:docs
+```
+
+Finally, to build and publish to npm, you need to run:
+
+```sh
+npm build               # Builds the source, transpiling via babel (runs as part of CI build)
+cd dist                 # Publish from the dist folder
+npm publish             # Requires credentials allowed to publish to npm
 ```
 
 ## Credits

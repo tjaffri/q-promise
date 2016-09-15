@@ -11,4 +11,4 @@ script:
   - npm run test:cover
 after_success:
   - npm run coveralls
-  - easystatic deploy docs --repo axis-tip/quran-promise
+  - npm run publish:docs
