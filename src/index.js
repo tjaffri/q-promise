@@ -33,14 +33,18 @@ class Quran {
   async chapters(chapterId) {
     let query = 'SELECT * FROM chapters ';
 
-    if (chapterId && chapterId > 114) {
-      throw new Error(`chapterId specified is out of bounds: ${chapterId}.`);
-    }
-
+    // sanitize inputs
     if (!!chapterId) {
+      if (chapterId > 114) {
+        throw new Error(`chapterId specified is out of bounds: ${chapterId}.`);
+      }
+
+      if (isNaN(chapterId)) {
+        throw new Error(`Invalid chapterId: ${chapterId}`);
+      }
+
       query += `WHERE id=${chapterId}`;
     }
-
     await db.open(databaseFilePath);
     return await db.all(query);
   }
@@ -51,12 +55,13 @@ class Quran {
   async juz(juzId) {
     let query = 'SELECT * FROM juz ';
 
-    if (juzId && juzId > 30) {
-      throw new Error(`JuzId specified is out of bounds: ${juzId}.`);
-    }
-
+    // sanitize inputs
     if (!!juzId) {
-      if (!util.isNumber(juzId)) {
+      if (juzId > 30) {
+        throw new Error(`juzId specified is out of bounds: ${juzId}.`);
+      }
+
+      if (isNaN(juzId)) {
         throw new Error(`Invalid juzId: ${juzId}`);
       }
 

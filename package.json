@@ -49,6 +49,7 @@
         "babel-register": "^6.8.0",
         "bs-html-injector": "^3.0.3",
         "chai": "^3.5.0",
+        "chai-string": "^1.2.0",
         "coveralls": "^2.11.9",
         "del": "^2.2.0",
         "eslint": "^2.9.0",

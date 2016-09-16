@@ -7,8 +7,12 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import { expect } from 'chai';
+import chai from 'chai';
 import Quran from '../src';
+
+// set up chai
+const expect = chai.expect;
+chai.use(require('chai-string'));
 
 describe('Quran', () => {
 
@@ -20,7 +24,7 @@ describe('Quran', () => {
       const verses = await quran.get(1, 3);
 
       // TEST: Surah Fatiha has 7 ayahs, of which we are fetching only the 3rd
-      expect(verses.length === 1);
+      expect(verses.length).to.be.equal(1);
 
       // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
       expect(verses[0]).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
@@ -32,7 +36,7 @@ describe('Quran', () => {
       const verses = await quran.get(1);
 
       // TEST: Surah Fatiha has 7 ayahs
-      expect(verses.length === 7);
+      expect(verses.length).to.be.equal(7);
 
       // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
       expect(verses[2]).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
@@ -47,7 +51,7 @@ describe('Quran', () => {
       const chapters = await quran.chapters(1);
 
       // TEST: We are getting metadata for 1 chapter
-      expect(chapters.length === 1);
+      expect(chapters.length).to.be.equal(1);
 
       // TEST: Surah Fatiha is Meccan
       expect(chapters[0].type).to.be.equal('Meccan');
@@ -59,7 +63,7 @@ describe('Quran', () => {
       const chapters = await quran.chapters();
 
       // TEST: There are 114 surahs
-      expect(chapters.length === 115);
+      expect(chapters.length).to.be.equal(114);
 
       // TEST: Surah Al-Nas is Meccan
       expect(chapters[chapters.length - 1].type).to.be.equal('Meccan');
@@ -74,7 +78,7 @@ describe('Quran', () => {
       const juz = await quran.juz(28);
 
       // TEST: We are getting metadata for 1 juz
-      expect(juz.length === 1);
+      expect(juz.length).to.be.equal(1);
 
       // TEST: 28rd juz starts from surah 58, ayat 1
       expect(juz[0].surah).to.be.equal(58);
@@ -88,7 +92,7 @@ describe('Quran', () => {
 
       // TEST: There are 30 juz, but this query returns 31 entires
       // since it demarcates when the start and end
-      expect(juz.length === 31);
+      expect(juz.length).to.be.equal(31);
 
       // TEST: Last juz starts from surah 78, ayat 1
       expect(juz[29].surah).to.be.equal(78);
@@ -104,15 +108,17 @@ describe('Quran', () => {
       const quran = new Quran();
       const juz = await quran.juz(28);
 
+      console.log(`** Juz 28: ${JSON.stringify(juz)}`);
+
       // Now fetch top 10 verses from verses in the juz
       const verses = await quran.select({ chapter: juz[0].surah },
         { offset: juz[0].ayah - 1, limit: 10 });
 
       // TEST: There are 10 verses fetched
-      expect(juz.length === 10);
+      expect(verses.length).to.be.equal(10);
 
       // TEST: Arabic text of the 6th verse of the juz matches
-      expect(verses[5].ar.startsWith('يَوْمَ يَبْعَثُهُمُ ٱللَّهُ'));
+      expect(verses[5].ar).to.startsWith('يَوْمَ يَبْعَثُهُمُ ٱللَّهُ');
     });
   });
 
@@ -124,7 +130,7 @@ describe('Quran', () => {
       const verses = await quran.select({ chapter: 1 });
 
       // TEST: Surah Fatiha has 7 ayahs
-      expect(verses.length === 7);
+      expect(verses.length).to.be.equal(7);
 
       // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
       expect(verses[2].ar).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
@@ -136,7 +142,7 @@ describe('Quran', () => {
       const verses = await quran.select({ chapter: 1 }, {}, ['ur']);
 
       // TEST: Surah Fatiha has 7 ayahs
-      expect(verses.length === 7);
+      expect(verses.length).to.be.equal(7);
 
       // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
       expect(verses[2].ar).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
@@ -151,7 +157,7 @@ describe('Quran', () => {
       const verses = await quran.select({ chapter: 1 }, { limit: 3 });
 
       // TEST: Surah Fatiha has 7 ayahs, of which we are fetching 3
-      expect(verses.length === 3);
+      expect(verses.length).to.be.equal(3);
 
       // TEST: Arabic text of the 3rd ayah of Surah Fatiha matches
       expect(verses[2].ar).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
@@ -163,7 +169,7 @@ describe('Quran', () => {
       const verses = await quran.select({ chapter: 1, verse: [2, 4, 6] }, {}, ['en', 'ur']);
 
       // TEST: Surah Fatiha has 7 ayahs, of which we are fetching 3
-      expect(verses.length === 3);
+      expect(verses.length).to.be.equal(3);
 
       // TEST: Urdu text of the 4th ayah of Surah Fatiha matches
       expect(verses[1].ur).to.be.equal('روزِقیامت کا مالک و مختار ہے');
