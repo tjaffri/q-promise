@@ -24,7 +24,7 @@ const quranType = 'uthmani';
 const rootDir = appRootDir.get();
 const corpusDir = `${rootDir}/corpus`;
 const arabicCorpusFilePath = `${corpusDir}/quran-${quranType}.txt`;
-const databaseFilePath = `${rootDir}/db.sqlite`;
+const databaseFilePath = `${rootDir}/src/db.sqlite`;
 
 // helper method to download a file via GET to a url, overwriting on any conflicts
 async function getFile(url, filePath) {

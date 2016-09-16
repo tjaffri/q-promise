@@ -10,7 +10,7 @@ import db from 'sqlite';
 import util from 'util';
 
 // Defines file paths
-const databaseFilePath = `${__dirname}/../db.sqlite`;
+const databaseFilePath = `${__dirname}/db.sqlite`;
 
 class Quran {
   // Helper method to get arabic verses from a chapter
@@ -38,10 +38,6 @@ class Quran {
     }
 
     if (!!chapterId) {
-      if (!util.isNumber(chapterId)) {
-        throw new Error(`Invalid chapterId: ${chapterId}`);
-      }
-
       query += `WHERE id=${chapterId}`;
     }
 

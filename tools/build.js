@@ -50,7 +50,7 @@ async function copyPackageFiles() {
   await fs.writeFile('dist/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
   await fs.writeFile('dist/LICENSE.txt', await fs.readFile('LICENSE.txt', 'utf-8'), 'utf-8');
   await fs.writeFile('dist/README.md', await fs.readFile('README.md', 'utf-8'), 'utf-8');
-  await fs.createReadStream('./db.sqlite').pipe(await fs.createWriteStream('dist/db.sqlite'));
+  await fs.createReadStream('./src/db.sqlite').pipe(await fs.createWriteStream('dist/db.sqlite'));
 }
 
 // execute as an IIFE: Immediately-Invoked Function Expression (IIFE)
