@@ -8,7 +8,7 @@
  */
 
 import { expect } from 'chai';
-import Quran from '../src/Quran';
+import Quran from '../src';
 
 describe('Quran', () => {
 
