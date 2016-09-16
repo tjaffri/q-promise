@@ -62,19 +62,14 @@ To launch the documentation site, run:
 
 ```sh
 $ npm install -g easystatic
-$ npm start:docs
-```
-
-To publish the documentation site, run:
-
-```sh
-$ npm run publish:docs
+$ npm start:docs        # Launches the docs site locally for testing
+$ npm run publish:docs  # Optionally, publishes the doc site to GitHub pages (runs as part of CI build)
 ```
 
 Finally, to build and publish to npm, you need to run:
 
 ```sh
-npm build               # Builds the source, transpiling via babel (runs as part of CI build)
+npm run build           # Builds the source, transpiling via babel (runs as part of CI build)
 cd dist                 # Publish from the dist folder
 npm publish             # Requires credentials allowed to publish to npm
 ```
