@@ -9,6 +9,5 @@ script:
   - npm run lint
   - npm run build
   - npm run test:cover
-after_success:
-  - npm run coveralls
   - npm run publish:docs
+  - npm run coveralls
