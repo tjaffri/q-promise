@@ -1,7 +1,7 @@
 {
     "name": "quran-promise",
     "version": "0.0.8",
-    "description": "ES6 promise enabled node module for the Holy Quran.",
+    "description": "ES2016 async/await (promise) enabled node module for the Holy Quran.",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/axis-tip/quran-promise.git"
@@ -13,7 +13,8 @@
         "Quran",
         "Islam",
         "Muslim",
-        "ES6",
+        "ES2016",
+        "ES7",
         "Promises",
         "JavaScript",
         "Babel"

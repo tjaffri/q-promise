@@ -6,7 +6,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/axis-tip/quran-promise.svg?style=flat-square)](https://coveralls.io/github/axis-tip/quran-promise)
 [![Dependency Status](http://img.shields.io/david/axis-tip/quran-promise.svg?style=flat-square)](https://david-dm.org/axis-tip/quran-promise)
 
-> ES6 promise enabled node module for the Holy Quran. Uses the Tanzil corpus: http://tanzil.net.
+> ES2016 async/await (promise) enabled node module for the Holy Quran. Uses the Tanzil corpus: http://tanzil.net.
 
 ## Using this Module
 
@@ -44,6 +44,7 @@ Finally, if you're new to Next Generation JavaScript you might want to brush up 
 
 1. ES6 Training Course](https://es6.io/friend/konstantin) by Wes Bos
 2. [You Don't Know JS: ES6 & Beyond](http://amzn.to/2bzvV51) by Kyle Simpson (Dec, 2015)
+3. [Understand promises before you start using async/await](https://medium.com/@bluepnume/learn-about-promises-before-you-start-using-async-await-eb148164a9c8#.q2u0j68wd)
 
 ### Testing, Running and Publishing
 
@@ -62,7 +63,7 @@ To launch the documentation site, run:
 
 ```sh
 $ npm install -g easystatic
-$ npm start:docs        # Launches the docs site locally for testing
+$ npm run start:docs    # Launches the docs site locally for testing
 $ npm run publish:docs  # Optionally, publishes the doc site to GitHub pages (runs as part of CI build)
 ```
 
@@ -83,7 +84,7 @@ With thanks, this module acknowledges and depends on the following resources:
 3. The Babel Starter Kit, used to scaffold the initial version of this module: https://github.com/kriasoft/babel-starter-kit/
 
 Finally, a HUGE callout to the  similar npm module https://www.npmjs.com/package/quran. We ended up completely rewriting it,
-to support ES6 promises, but got a lot of inspiration from it. We also tried to keep the calling semantics as similar as possible
+to support ES2016 async/await (promises), but got inspired by it. We also tried to keep the calling semantics as compatible as possible
 to aid anyone who might be migrating from that module.
 
 ### License
