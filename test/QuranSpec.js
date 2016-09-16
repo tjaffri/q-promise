@@ -39,12 +39,12 @@ describe('Quran', () => {
     });
   });
 
-  describe('Quran.chapter(...)', () => {
+  describe('Quran.chapters(...)', () => {
 
     it('should return info about a chapter', async () => {
       // Fetch info about chapter 1
       const quran = new Quran();
-      const chapters = await quran.chapter(1);
+      const chapters = await quran.chapters(1);
 
       // TEST: We are getting metadata for 1 chapter
       expect(chapters.length === 1);
@@ -56,7 +56,7 @@ describe('Quran', () => {
     it('should return info about all chapters', async () => {
       // Fetch info about all chapters
       const quran = new Quran();
-      const chapters = await quran.chapter();
+      const chapters = await quran.chapters();
 
       // TEST: There are 114 surahs
       expect(chapters.length === 115);

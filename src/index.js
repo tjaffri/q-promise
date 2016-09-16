@@ -27,10 +27,10 @@ class Quran {
     return verses;
   }
 
-  // Helper method to get information about a chapter
+  // Helper method to get information about chapters
   // Note: If no chapterId is specified then this method returns information
   //       about all chapters.
-  async chapter(chapterId) {
+  async chapters(chapterId) {
     let query = 'SELECT * FROM chapters ';
 
     if (chapterId && chapterId > 114) {
