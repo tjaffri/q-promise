@@ -1,11 +1,14 @@
 <div class="nav">
-  <h3 class="nav__title">Quick Start</h3>
+  <h3 class="nav__title">Contents</h3>
   <ul class="nav__menu">
     <li class="nav__menu-item<%= path === '/' ? ' nav__menu-item--selected' : '' %>">
-      <a class="nav__link" href="<%= base%>/">Overview</a>
+      <a class="nav__link" href="<%= base%>/">Getting Started</a>
     </li>
-    <li class="nav__menu-item<%= path === '/getting-started' ? ' nav__menu-item--selected' : '' %>">
-      <a class="nav__link" href="<%= base%>/getting-started">Getting Started</a>
+    <li class="nav__menu-item<%= path === '/content-queries' ? ' nav__menu-item--selected' : '' %>">
+      <a class="nav__link" href="<%= base%>/content-queries">Content Queries</a>
+    </li>
+    <li class="nav__menu-item<%= path === '/low-level-selects' ? ' nav__menu-item--selected' : '' %>">
+      <a class="nav__link" href="<%= base%>/low-level-selects">Low Level Selects</a>
     </li>
   </ul>
 </div>
