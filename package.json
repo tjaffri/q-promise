@@ -1,6 +1,6 @@
 {
     "name": "quran-promise",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "ES6 promise enabled node module for the Holy Quran.",
     "repository": {
         "type": "git",

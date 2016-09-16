@@ -41,7 +41,7 @@ describe('Quran', () => {
 
   describe('Quran.chapter(...)', () => {
 
-    it('should return info about an ayat', async () => {
+    it('should return info about a chapter', async () => {
       // Fetch info about chapter 1
       const quran = new Quran();
       const chapters = await quran.chapter(1);
@@ -53,7 +53,7 @@ describe('Quran', () => {
       expect(chapters[0].type).to.be.equal('Meccan');
     });
 
-    it('should return info about all ayat', async () => {
+    it('should return info about all chapters', async () => {
       // Fetch info about all chapters
       const quran = new Quran();
       const chapters = await quran.chapter();
@@ -118,7 +118,7 @@ describe('Quran', () => {
 
   describe('Quran.select(...)', () => {
 
-    it('should return a full numbered ayat in arabic', async () => {
+    it('should return a full numbered chapter in arabic', async () => {
       // Fetch Al Fatiha via select
       const quran = new Quran();
       const verses = await quran.select({ chapter: 1 });
@@ -130,7 +130,7 @@ describe('Quran', () => {
       expect(verses[2].ar).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
     });
 
-    it('should return a full numbered ayat in a translation', async () => {
+    it('should return a full numbered chapter with a translation', async () => {
       // Fetch Al Fatiha via select with a translation
       const quran = new Quran();
       const verses = await quran.select({ chapter: 1 }, {}, ['ur']);
