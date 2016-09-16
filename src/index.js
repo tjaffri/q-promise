@@ -6,14 +6,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
-
-import appRootDir from 'app-root-dir';
 import db from 'sqlite';
 import util from 'util';
 
 // Defines file paths
-const rootDir = appRootDir.get();
-const databaseFilePath = `${rootDir}/db.sqlite`;
+const databaseFilePath = `${__dirname}/../db.sqlite`;
 
 class Quran {
   // Helper method to get arabic verses from a chapter
@@ -48,6 +45,7 @@ class Quran {
       query += `WHERE id=${chapterId}`;
     }
 
+    await db.open(databaseFilePath);
     return await db.all(query);
   }
 
@@ -69,6 +67,7 @@ class Quran {
       query += `WHERE id=${juzId}`;
     }
 
+    await db.open(databaseFilePath);
     return await db.all(query);
   }
 
@@ -77,7 +76,8 @@ class Quran {
     const query = `SELECT chapter, verse, ${language} FROM ${language}` +
       `WHERE ${language} LIKE "%${text}%";`;
 
-    return db.all(query);
+    await db.open(databaseFilePath);
+    return await db.all(query);
   }
 
   // Full low level select method. Allows you to specify:
