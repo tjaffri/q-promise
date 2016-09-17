@@ -1,6 +1,6 @@
 {
     "name": "quran-promise",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "ES2016 async/await (promise) enabled node module for the Holy Quran.",
     "repository": "axis-tip/quran-promise",
     "homepage": "https://axis-tip.github.io/quran-promise/",
