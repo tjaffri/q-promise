@@ -18,7 +18,7 @@ describe('Quran', () => {
 
   describe('Quran.get(...)', () => {
 
-    it('should return a numbered verse of a numbered ayat', async () => {
+    it('should return a numbered verse of a numbered chapter', async () => {
       // Fetch verse 1 of Al Fatiha via get
       const quran = new Quran();
       const verses = await quran.get(1, 3);
@@ -30,7 +30,7 @@ describe('Quran', () => {
       expect(verses[0]).to.be.equal('ٱلرَّحْمَٰنِ ٱلرَّحِيمِ');
     });
 
-    it('should return a full numbered ayat', async () => {
+    it('should return a full numbered chapter', async () => {
       // Fetch Al Fatiha via get
       const quran = new Quran();
       const verses = await quran.get(1);

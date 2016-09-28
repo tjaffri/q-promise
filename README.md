@@ -42,7 +42,7 @@ npm run gendb
 
 Finally, if you're new to Next Generation JavaScript you might want to brush up on the following resources:
 
-1. ES6 Training Course](https://es6.io/friend/konstantin) by Wes Bos
+1. [ES6 Training Course](https://es6.io/friend/konstantin) by Wes Bos
 2. [You Don't Know JS: ES6 & Beyond](http://amzn.to/2bzvV51) by Kyle Simpson (Dec, 2015)
 3. [Understand promises before you start using async/await](https://medium.com/@bluepnume/learn-about-promises-before-you-start-using-async-await-eb148164a9c8#.q2u0j68wd)
 
