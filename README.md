@@ -1,16 +1,16 @@
-# [quran-promise](https://github.com/axis-tip/quran-promise)
+# [quran-promise](https://github.com/tjaffri/quran-promise)
 
 [![NPM version](http://img.shields.io/npm/v/quran-promise.svg?style=flat-square)](https://www.npmjs.com/package/quran-promise)
 [![NPM downloads](http://img.shields.io/npm/dm/quran-promise.svg?style=flat-square)](https://www.npmjs.com/package/quran-promise)
-[![Build Status](http://img.shields.io/travis/axis-tip/quran-promise/master.svg?style=flat-square)](https://travis-ci.org/axis-tip/quran-promise)
-[![Coverage Status](https://img.shields.io/coveralls/axis-tip/quran-promise.svg?style=flat-square)](https://coveralls.io/github/axis-tip/quran-promise)
-[![Dependency Status](http://img.shields.io/david/axis-tip/quran-promise.svg?style=flat-square)](https://david-dm.org/axis-tip/quran-promise)
+[![Build Status](http://img.shields.io/travis/tjaffri/quran-promise/master.svg?style=flat-square)](https://travis-ci.org/tjaffri/quran-promise)
+[![Coverage Status](https://img.shields.io/coveralls/tjaffri/quran-promise.svg?style=flat-square)](https://coveralls.io/github/tjaffri/quran-promise)
+[![Dependency Status](http://img.shields.io/david/tjaffri/quran-promise.svg?style=flat-square)](https://david-dm.org/tjaffri/quran-promise)
 
 > ES2016 async/await (promise) enabled node module for the Holy Quran. Uses the Tanzil corpus: http://tanzil.net.
 
 ## Using this Module
 
-For detailed documentation, and code samples for how to use this module in your app or service please visit: https://axis-tip.github.io/quran-promise/.
+For detailed documentation, and code samples for how to use this module in your app or service please visit: https://tjaffri.github.io/quran-promise/.
 
 ## Developing this Module
 
@@ -29,7 +29,7 @@ First, set up your dev tools and node.js:
 Next, clone the repo and install dependencies.
 
 ```sh
-$ git clone https://github.com/axis-tip/quran-promise
+$ git clone https://github.com/tjaffri/quran-promise
 $ cd quran-promise
 $ npm install
 ```

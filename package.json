@@ -1,9 +1,9 @@
 {
     "name": "quran-promise",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "ES2016 async/await (promise) enabled node module for the Holy Quran.",
-    "repository": "axis-tip/quran-promise",
-    "homepage": "https://axis-tip.github.io/quran-promise/",
+    "repository": "tjaffri/quran-promise",
+    "homepage": "https://tjaffri.github.io/quran-promise/",
     "author": "Axis, the Information Professionals.",
     "license": "MIT",
     "keywords": [
@@ -71,13 +71,13 @@
         "gendb": "babel-node tools/downloadAndImportCorpus.js",
         "lint": "eslint src test tools",
         "lint:fix": "eslint --fix src test tools",
-        "publish:docs": "easystatic deploy docs --repo axis-tip/quran-promise",
+        "publish:docs": "easystatic deploy docs --repo tjaffri/quran-promise",
         "start:docs": "easystatic start docs",
         "test": "mocha --compilers js:babel-register",
         "test:watch": "mocha --compilers js:babel-register --reporter min --watch",
         "test:cover": "babel-node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha"
     },
     "bugs": {
-        "url": "https://github.com/axis-tip/quran-promise/issues"
+        "url": "https://github.com/tjaffri/quran-promise/issues"
     }
 }

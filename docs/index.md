@@ -8,7 +8,7 @@ title: quran-promise ∙ ES2016 async/await (promise) enabled node module for th
 ES2016 async/await (promise) enabled node module for the Holy Quran.
 
 > **Note:** This module is still a work in progress, so these usage docs are not great
-> yet. In the meantime, you can check out our [automated tests](https://github.com/axis-tip/quran-promise/tree/master/test) 
+> yet. In the meantime, you can check out our [automated tests](https://github.com/tjaffri/quran-promise/tree/master/test) 
 > for reference if you want to get started. Contributions to these docs very welcome!
 
 ## Getting Started
